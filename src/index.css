@@ -1,3 +1,162 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-800;
+    height: 100%;
+  }
+  
+  #root {
+    @apply h-full;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md 
+           shadow-sm font-medium transition-colors duration-150 disabled:opacity-50 
+           disabled:cursor-not-allowed flex items-center justify-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 py-2 px-4 border border-gray-300 
+           rounded-md shadow-sm font-medium transition-colors duration-150 
+           disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center;
+  }
+  
+  .input-field {
+    @apply border border-gray-300 rounded-md w-full px-3 py-2 shadow-sm 
+           focus:outline-none focus:ring-2 focus:ring-primary-500 
+           focus:border-transparent box-border;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-green {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .badge-yellow {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .badge-red {
+    @apply bg-red-100 text-red-800;
+  }
+}
+
+.loader {
+  @apply animate-spin inline-block w-5 h-5 border-2 border-current border-t-transparent text-primary-600 rounded-full;
+}
+
+.ad-container {
+  @apply relative bg-gray-100 rounded-lg overflow-hidden;
+  min-height: 250px;
+}
+
+.zapt-badge {
+  @apply fixed bottom-4 left-4 bg-gray-800 text-white py-1 px-3 rounded-full text-xs z-50;
+}
+
+/* Camera styles */
+.camera-container {
+  @apply relative overflow-hidden rounded-lg bg-black;
+  aspect-ratio: 4/3;
+}
+
+/* Blog content styles */
+.blog-content h1 {
+  @apply text-2xl font-bold mb-4 mt-6;
+}
+
+.blog-content h2 {
+  @apply text-xl font-bold mb-3 mt-5;
+}
+
+.blog-content h3 {
+  @apply text-lg font-bold mb-2 mt-4;
+}
+
+.blog-content p {
+  @apply mb-4;
+}
+
+.blog-content ul, .blog-content ol {
+  @apply mb-4 ml-6;
+}
+
+.blog-content li {
+  @apply mb-1;
+}
+
+.blog-content ul li {
+  @apply list-disc;
+}
+
+.blog-content ol li {
+  @apply list-decimal;
+}
+
+.blog-content a {
+  @apply text-primary-600 hover:text-primary-800 underline;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4;
+}
+
+/* Ad viewer */
+.ad-viewer {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75;
+}
+
+.ad-viewer-content {
+  @apply bg-white rounded-lg w-full max-w-lg overflow-hidden;
+}
+
+.ad-viewer-header {
+  @apply flex items-center justify-between p-4 border-b border-gray-200;
+}
+
+.ad-viewer-body {
+  @apply p-4;
+}
+
+.ad-viewer-footer {
+  @apply p-4 bg-gray-50 flex justify-end;
+}
+
+/* Ingredient analysis results */
+.analysis-rating {
+  @apply w-full bg-gray-200 rounded-full h-2;
+}
+
+.analysis-rating-bar {
+  @apply h-2 rounded-full;
+}
+
+.ingredient-item {
+  @apply border border-gray-200 rounded-md p-4 mb-4 transition-all duration-200;
+}
+
+.ingredient-item:hover {
+  @apply shadow-md;
+}
